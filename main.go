@@ -59,7 +59,7 @@ func main() {
 
 			_, err = uploader.Upload(&s3manager.UploadInput{ // s3 upload
 				Bucket: aws.String(S3_BUCKET),
-				Key:    aws.String(filename), // create (folder&file or file) path in s3 bucket
+				Key:    aws.String(filename), // create (folder&file or file) path in s3 bucket.
 				Body:   file,
 			})
 			if err != nil {
