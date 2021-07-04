@@ -57,7 +57,7 @@ func main() {
 			}
 			defer file.Close()
 
-			_, err = uploader.Upload(&s3manager.UploadInput{ // s3 upload execute
+			_, err = uploader.Upload(&s3manager.UploadInput{ // s3 upload execute.
 				Bucket: aws.String(S3_BUCKET),
 				Key:    aws.String(filename), // create (folder&file or file) path in s3 bucket
 				Body:   file,
