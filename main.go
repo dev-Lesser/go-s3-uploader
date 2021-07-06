@@ -42,7 +42,7 @@ func main() {
 		panic(err)
 	}
 
-	targetDir := "../data_pipeline/images/"
+	targetDir := "YOUR TARGET DIR NAME" // read files in target dir
 	files, err := ioutil.ReadDir(targetDir)
 	if err != nil {
 		exitErrorf("Unable to read data %q", targetDir)
@@ -59,7 +59,7 @@ func main() {
 
 			_, err = uploader.Upload(&s3manager.UploadInput{ // s3 upload
 				Bucket: aws.String(S3_BUCKET),
-				Key:    aws.String("images/" + filename), // file path
+				Key:    aws.String("images/" + filename), // create (folder&file or file) path in s3 bucket
 				Body:   file,
 			})
 			if err != nil {
